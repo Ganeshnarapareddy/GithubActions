@@ -1,13 +1,23 @@
-name: fourth flow
+name: "Fifth Workflow"
 on:
-  push:
-  pull_request:
-  workflow_dispatch:
+    push:
+    pull_request:
+    workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: "Checkout"
-        uses: actions/checkout@v4
-      - run: |
-          echo "Github Action Triggered"
+    - name: "Comments"
+      run: echo "Building Application"
+  test:
+    runs-on: ubuntu-latest
+    needs: [build]
+    steps:
+    - name: "comments"
+      run: echo "Testing the build"
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [build, test]
+    steps:
+    - name: "comments"
+      run: echo "Deplying the Application" 
