@@ -9,7 +9,8 @@ jobs:
         steps:
             - name: "checkingout Repo"
               uses: actions/checkout@v4
-              run: echo "Code Downloaded"
+            - run: |
+                  echo "Code Downloaded"
             - name: "Build"
               run: |
                 echo "Build Started"
