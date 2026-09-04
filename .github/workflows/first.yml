@@ -1,12 +1,16 @@
-name: first workflow
+name: Second Flow 
+
 on:
-  push:
+    push:
+
 jobs:
-  build:
-    runs-on: ubuntu-22.04
-    steps:
-      - name: Print Message
-        run: |
-          echo "Hi All"
-          echo "Hi Bye"
-    
+    build:
+        runs-on: ubuntu:latest
+        steps:
+            - name: "checkingout Repo"
+              uses: actions/checkout@v4
+              run: echo "Code Downloaded"
+            - name: "Build"
+              run: |
+                echo "Build Started"
+            
